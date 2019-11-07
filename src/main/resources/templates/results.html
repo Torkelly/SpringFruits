@@ -1,0 +1,24 @@
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View All Fruits</title>
+</head>
+<body>
+
+<form>
+<table>
+<tr th:each="currentFruit : ${fruits}" >
+ <td th:text="${currentFruit.id}" />
+    <td th:text="${currentFruit.name}" />
+    <td th:text="${currentFruit.color}" />
+    <td th:text="${currentFruit.calories}" />
+   <td><a th:href="@{/edit/{id}(id=${currentFruit.id})}">Edit</a></td>
+    <td><a th:href="@{/delete/{id}(id=${currentFruit.id})}">Delete</a></td>
+</tr>
+</table>
+</form>
+<a href="../inputFruit">Add a new fruit</a>
+
+</body>
+</html>

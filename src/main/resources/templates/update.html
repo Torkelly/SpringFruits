@@ -1,0 +1,24 @@
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Update Fruit</title>
+</head>
+<body>
+<form action="#" th:action="@{/update/{id}(id=${fruit.id})}" th:object="${fruit}" method="post">
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="Name">
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+    
+    <label for="color">Color</label>
+    <input type="text" th:field="*{color}" id="color" placeholder="Color">
+    <span th:if="${#fields.hasErrors('color')}" th:errors="*{color}"></span>
+    
+    <label for="calories">Calories</label>
+    <input type="text" th:field="*{calories}" id="calories" placeholder="calories">
+    <span th:if="${#fields.hasErrors('calories')}" th:errors="*{calories}"></span>
+    
+    <input type="submit" value="Update Fruit">   
+</form>
+</body>
+</html>

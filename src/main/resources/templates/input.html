@@ -1,0 +1,19 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert New Fruit</title>
+</head>
+<body>
+ <form th:object="${newFruit}" th:action="@{/inputFruit}" method='POST'>
+ 
+ Name: <input name="name" size="10"> <br />
+ Color: <input name="color" size="10"><br />
+ Calories: <input name="calories" size="10"><br />
+ 
+        
+ <input name="submit" type="submit" value="submit" />
+         
+</form>
+<a href="viewAll">View all Fruits</a>
+</body>
+</html>
